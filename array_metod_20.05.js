@@ -22,7 +22,7 @@ const array_of_negative_numbers = array_of_numbers.filter((el) => el < 0);
 // Пример значений переменных:
 let numbers = [10, 20, 33, 55, 100];
 // Пример результата: 2
-//3 способ без метода массива
+//- способ без метода массива:
 let counter = 1;
 let num = numbers[0];
 for (let i = 1; i < numbers.length; i++) {
@@ -30,47 +30,48 @@ for (let i = 1; i < numbers.length; i++) {
     if (num <= 50) counter++;
     else break;
 }
-// console.log(counter);
-//3 способ с методом массива
-// function counter (){
-
-// }
-
-
-
-
-// В программе задана переменная values, которая хранит массив из строк. Определите математическую сумму всех элементов, 
+//2 console.log(counter);
+//- способ с методом массива:
+let co = 0;
+let arEl = 0;
+numbers.forEach((el) => {
+    if (arEl + el <= 50) {
+        arEl += el;
+        co++;
+    }
+});
+//2 console.log(co);
+// В программе задана переменная values, которая хранит массив из строк. Определите математическую сумму всех элементов,
 // которые при преобразовании в число не вернут значение NaN.
 // Результат выведите в консоль.
 // Пример значений переменных:
-let values = ["100", "30", "Не число", "20", "Тоже не число"]
+let values = ["100", "30", "Не число", "20", "Тоже не число"];
 // Пример результата: 150
-const value_num =(arr)=>{
-return newValues = arr.filter(element => +element).map(Number).reduce((acc,val)=>acc + val, 0)
+const value_num = (arr) => {
+    return (newValues = arr
+        .filter((element) => +element)
+        .map(Number)
+        .reduce((acc, val) => acc + val, 0));
+};
+//2 console.log(value_num(values));
 
-}
-// console.log(value_num(values));
-
-
-
-// В программе заданы два массива array_1 и array_2, элементы которого являются числами. 
-// Значения внутри одного массива уникальные. Реализуйте функцию intersection, которая принимает в 
-// качестве аргументов два массива и возвращает новый массив. Он должен содержать значения, которые 
+// В программе заданы два массива array_1 и array_2, элементы которого являются числами.
+// Значения внутри одного массива уникальные. Реализуйте функцию intersection, которая принимает в
+// качестве аргументов два массива и возвращает новый массив. Он должен содержать значения, которые
 // встречаются в обоих массивах-аргументах, и быть отсортирован по убыванию.
 
 // Пример значений переменных:
-let array_1 = [1, 4, 7, 8, 2]
-let array_2 = [1, 5, 11, 6, 2]
+let array_1 = [1, 4, 7, 8, 2];
+let array_2 = [1, 5, 11, 6, 2];
 
 // Пример результата: [2, 1]
-const intersection=()=>{
-    const arr_1_2=[]
+const intersection = () => {
+    const arr_1_2 = [];
     for (let i = 0; i < array_1.length; i++) {
         for (let j = 0; j < array_2.length; j++) {
-            if(array_1[i]==array_2[j]) arr_1_2.push(array_1[i])
+            if (array_1[i] == array_2[j]) arr_1_2.push(array_1[i]);
         }
     }
-    return arr_1_2.sort((a,b)=> b-a)
-}
-console.log(intersection());
-
+    return arr_1_2.sort((a, b) => b - a);
+};
+// console.log(intersection())
