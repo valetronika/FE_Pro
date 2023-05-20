@@ -11,7 +11,7 @@ checkString('dog')
 // * Доп задание. доработайте функцию таким образом, чтобы выводимое значение округлялось до десятой части
 
 let checkMiddleValue = function (num1, num2) {
-    return (+(num1 + num2) / 2).toFixed(2);  // возращает строку ставим + сперели
+    return (+(num1 + num2) / 2).toFixed(2);  // возращает строку ставим + спереди
 };
 console.log(checkMiddleValue(56, 45));
 
