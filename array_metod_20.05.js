@@ -32,15 +32,16 @@ for (let i = 1; i < numbers.length; i++) {
 }
 //2 console.log(counter);
 //- способ с методом массива:
-let co = 0;
-let arEl = 0;
+let counter2 = 0;
+let arr_counter = 0;
 numbers.forEach((el) => {
-    if (arEl + el <= 50) {
-        arEl += el;
-        co++;
+    if (arr_counter + el <= 50) {
+        arr_counter += el;
+        counter2++;
     }
 });
-//2 console.log(co);
+// console.log(counter2);
+
 // В программе задана переменная values, которая хранит массив из строк. Определите математическую сумму всех элементов,
 // которые при преобразовании в число не вернут значение NaN.
 // Результат выведите в консоль.
@@ -65,13 +66,13 @@ let array_1 = [1, 4, 7, 8, 2];
 let array_2 = [1, 5, 11, 6, 2];
 
 // Пример результата: [2, 1]
-const intersection = () => {
+const intersection = (arr1,arr2) => {
     const arr_1_2 = [];
-    for (let i = 0; i < array_1.length; i++) {
-        for (let j = 0; j < array_2.length; j++) {
-            if (array_1[i] == array_2[j]) arr_1_2.push(array_1[i]);
+    for (let i = 0; i < arr1.length; i++) {
+        for (let j = 0; j < arr2.length; j++) {
+            if (arr1[i] == arr2[j]) arr_1_2.push(arr1[i]);
         }
     }
     return arr_1_2.sort((a, b) => b - a);
 };
-// console.log(intersection())
+console.log(intersection(array_1,array_2))
