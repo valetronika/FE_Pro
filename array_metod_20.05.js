@@ -4,7 +4,7 @@
 // Результат: true
 const strings_array = ["Велосипед", "Торт", "Тенис", "Ракетка", "Город"];
 function root_of_length() {
-    return strings_array.some((el) => Math.sqrt(el.length) % 2 == 0);
+    return strings_array.some((el) => Math.sqrt(el.length) % 1 == 0);
 }
 //2 console.log(root_of_length());
 
