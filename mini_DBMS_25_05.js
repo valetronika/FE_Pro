@@ -64,7 +64,7 @@ function removeUser(id) {
     }
 }
 // removeUser(6)
-// console.log(users);
+// console.log(users); 
 
 // Функция changeUser(id, name, salary). Функция должна по id найти заданный элемент и переопределить значение
 // name и salary на значение, указанные в аргументе в момент вызова
