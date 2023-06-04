@@ -15,38 +15,36 @@ let products = [
     { id: 3, title: "Велосипед", count: 100 },
     { id: 4, title: "Велосипед", count: 1 },
 ];
-let productsData=JSON.parse(localStorage.getItem('productsDat'))
 
-let  products1 = JSON.parse(localStorage.getItem('productsDat'))??products
+let productsData = JSON.parse(localStorage.getItem("productsDat")) ?? products; 
 
 // нахожу максимальное значение ID
-let maxId = products.reduce((acc, val) => {
+let maxId = productsData.reduce((acc, val) => {
     return val.id > acc ? val.id : acc;
 }, 0);
 
 add_form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const { add } = event.target;  //деструкт инпут по name инпута, обращаться по add.value
+    const { add } = event.target; //деструкт инпут по name инпута, обращаться по add.value
     const new_obj = {
         id: ++maxId,
         title: add.value,
         count: 1,
     };
-    products = [...products, new_obj];
-    localStorage.setItem('productsDat',JSON.stringify(products))
-    productsData=JSON.parse(localStorage.getItem('productsDat'))
-    
-    rerender(productsData)
-    add.value="";
+    productsData = [...productsData, new_obj];
+    localStorage.setItem("productsDat", JSON.stringify(productsData));
+    productsData = JSON.parse(localStorage.getItem("productsDat"));
+
+    rerender(productsData);
+    add.value = "";
 });
 
-function rerender(arr){
-
-    contentContainer.innerHTML=''
-    renderCard(arr)
+function rerender(arr) {
+    contentContainer.innerHTML = "";
+    renderCard(arr);
 }
 
-console.log(products1);
+console.log(productsData);
 function renderCard(arrayData) {
     arrayData.forEach((elem) => {
         const cardElement = document.createElement("div");
@@ -72,36 +70,38 @@ function renderCard(arrayData) {
         button_add.addEventListener("click", () => {
             counterElement.innerText = ++elem.count;
 
-            productsData.map((el)=>{
-                if(el.id===elem.id){
-                    el.count++
-                    return el
-                }else{
-                    return el
+            productsData.map((el) => {
+                if (el.id === elem.id) {
+                    el.count++;
+                    return el;
+                } else {
+                    return el;
                 }
-            })
-            setLS(productsData)
+            });
+            setLS(productsData);
         });
         button_reduce.addEventListener("click", () => {
             counterElement.innerText = --elem.count;
             if (elem.count === 0) {
                 cardElement.remove();
             }
-            const a =productsData.map((el)=>{
-                if(el.id===elem.id){
-                    --el.count
-                    return el
-                }else{
-                    return el
-                }
-            }).filter((el)=> el.count>0)
-            console.log(productsData);
-            setLS(a)
+            const a = productsData
+
+                .map((el) => {
+                    if (el.id === elem.id) {
+                        --el.count;
+                        return el;
+                    } else {
+                        return el;
+                    }
+                })
+                .filter((el) => el.count > 0);
+            setLS(a);
         });
     });
 }
-renderCard(products1);
+renderCard(productsData);
 
 function setLS(array) {
-    localStorage.setItem('productsDat',JSON.stringify(array))
+    localStorage.setItem("productsDat", JSON.stringify(array));
 }
