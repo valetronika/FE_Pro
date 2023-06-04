@@ -16,7 +16,7 @@ let products = [
     { id: 4, title: "Велосипед", count: 1 },
 ];
 
-let productsData = JSON.parse(localStorage.getItem("productsDat")) ?? products; 
+let productsData = JSON.parse(localStorage.getItem("productsDat")) ?? products;
 
 // нахожу максимальное значение ID
 let maxId = productsData.reduce((acc, val) => {
@@ -82,8 +82,10 @@ function renderCard(arrayData) {
         });
         button_reduce.addEventListener("click", () => {
             counterElement.innerText = --elem.count;
-            if (elem.count === 0) {
+            if (elem.count <= 0) {
                 cardElement.remove();
+                productsData = productsData.filter((el) => el.id !== elem.id);
+                setLS(productsData); 
             }
             const a = productsData
 
