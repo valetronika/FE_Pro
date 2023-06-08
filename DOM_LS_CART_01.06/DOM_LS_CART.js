@@ -82,7 +82,7 @@ function renderCard(arrayData) {
             setLS(productsData);
         });
         button_reduce.addEventListener("click", () => {
-            if (elem.count <= 0) {
+            if (elem.count <= 1) {
                 cardElement.remove();
                 productsData = productsData.filter((el) => el.id !== elem.id);
                 setLS(productsData);
