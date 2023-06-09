@@ -91,7 +91,7 @@ function renderCard(arrayData) {
             .map((el) => {
                 if (el.id === elem.id) {
                         counterElement.innerText = --elem.count;
-                        // --el.count;
+
                         return el;
                     } else {
                         return el;
