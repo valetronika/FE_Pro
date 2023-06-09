@@ -34,22 +34,52 @@ fetch("https://dummyjson.com/products")
     // .then((data)=>console.log(data.products))
     .then((data) => render(data.products));
 
+function carusel(arrImg) {
+    // console.log(arrImg);
+    const imgContainer = document.createElement("div");
+    const imgEl = document.createElement("img");
+    const leftButtonEl = document.createElement("button");
+    const rightButtonEl = document.createElement("button");
+
+    let photoIndex = 0;
+    imgEl.src = arrImg[photoIndex];
+    //buttons
+    leftButtonEl.innerText = "<";
+    rightButtonEl.innerText = ">";
+
+    rightButtonEl.addEventListener("click", (event) => {
+        photoIndex = ++photoIndex % arrImg.length;
+        imgEl.src = arrImg[photoIndex];
+    });
+
+    leftButtonEl.addEventListener("click", (event) => {
+        photoIndex === 0 ? (photoIndex = arrImg.length) : "";
+        imgEl.src = arrImg[--photoIndex % arrImg.length];
+    });
+
+    imgContainer.append(leftButtonEl, imgEl, rightButtonEl);
+    imgContainer.className = "imgContainer";
+    return imgContainer;
+}
+
 function render(array) {
     array.forEach((element) => {
+        const imgCollection = element.images;
+
         const prodContainer = document.createElement("div");
-        const imgElem = document.createElement("img");
+        // const imgElem = document.createElement("img");
         const titleElem = document.createElement("h2");
         const priceElem = document.createElement("p");
 
-        imgElem.src = element.images[0];
-        imgElem.setAttribute("alt", "product");
+        // imgElem.src = element.images[0];
+        // imgElem.setAttribute("alt", "product");
         titleElem.innerText = element.title;
         priceElem.innerText = `price: ${element.price}$`;
 
         prodContainer.className = "product__item";
 
         prodContainer.append(
-            imgElem,
+            carusel(imgCollection),
             titleElem,
             priceElem,
             rating(element.rating)

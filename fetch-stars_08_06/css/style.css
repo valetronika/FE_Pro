@@ -16,17 +16,39 @@ html{
     height: 450px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     
+    padding: 0 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: #fff;
 }
-.product__item img{
+.imgContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.imgContainer img{
+    width: 100%;
+    height: 200px;
+    object-fit: contain; 
+}
+.imgContainer button{
+    width: 50px;
+    height:100%;
+    font-size: 30px;
+    font-weight: 700;
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+}
+/* .product__item img{
     width: 100%;
     height: 200px;
     object-fit: contain;
-}
+} */
 .product__item h2{
     font-weight: 600;
     font-size: 30px;
