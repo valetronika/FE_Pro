@@ -1,0 +1,126 @@
+.main_container{
+
+}
+.users_container {
+    padding: 120px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    /* margin: 0 auto; */
+}
+.user_card{
+    border: 1px solid black;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+
+    font-weight: 500;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: rgb(2, 2, 2);
+
+}
+a:hover{
+    color: rgb(82, 65, 233);
+
+}
+/*  modal */
+.div_comment_wrapper{
+position: fixed;
+top: 0;
+left: 0;
+
+width: 100%;
+height: 100%;
+
+backdrop-filter: blur(3px);
+}
+.autor_name{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 20px;
+}
+.div_comment_modal{
+    padding: 50px;
+    position: absolute;
+    top: calc(50% - 250px);
+    left: calc(50% - 400px);
+
+    width: 800px;
+    height: 500px;
+
+    border: 1px solid rgba(0, 0, 0, 0.452);
+    border-radius: 15px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.342);
+    background-color: #fff;
+    overflow: scroll;
+
+}
+
+.img_comment{
+    
+    width: 150px;
+    height: 150px;
+}
+
+.comment_content{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.3;
+}
+.text_content{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    height: 100%;
+    /* overflow: auto; */
+
+}
+.text_content h3{
+    font-weight: 600;
+}
+
+.warning{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
+}
+.comment_available{
+    background-color: #c0f5c544;
+}
+.comment_not_available{
+    background-color: #f59b9b2a;
+
+}
+
+.mouseout {
+
+    background-color: #ffffff;
+}
+
+
+@media(max-width: 1200px){
+    .users_container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media(max-width: 800px){
+    .users_container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
