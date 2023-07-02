@@ -6,4 +6,4 @@
 [thema: fetch-stars](https://valetronika.github.io/FE_Pro/fetch-stars_08_06/)
 
 #### home work 08.06:
-[thema: DOM USERS MODAL]
+[thema: DOM USERS MODAL](https://valetronika.github.io/FE_Pro/DOM_USERS_MODAL_29_06)
