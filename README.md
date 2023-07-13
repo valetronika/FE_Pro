@@ -7,3 +7,7 @@
 
 #### home work 08.06:
 [thema: DOM USERS MODAL](https://valetronika.github.io/FE_Pro/DOM_USERS_MODAL_29_06)
+
+### home work 06.07:
+
+[thema: BuhOne](https://valetronika.github.io/FE_Pro/+++)
